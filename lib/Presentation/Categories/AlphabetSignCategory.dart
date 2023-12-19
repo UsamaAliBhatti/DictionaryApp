@@ -188,10 +188,12 @@ class AlphabetWidget extends StatelessWidget {
   final String alphabet;
   final VoidCallback ontap;
   final Color containercolor;
+  final double fontSize;
   const AlphabetWidget({
     required this.alphabet,
     required this.ontap,
     required this.containercolor,
+    this.fontSize = 40,
     super.key,
   });
 
@@ -209,11 +211,12 @@ class AlphabetWidget extends StatelessWidget {
             border: Border.all(color: AppColors.white, width: 3)),
         child: TextWithStroke(
           text: alphabet,
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
+              height: 0.8,
               fontFamily: "coiny",
               color: AppColors.black,
               fontWeight: FontWeight.bold,
-              fontSize: 40),
+              fontSize: fontSize),
           strokeWidth: 5.0,
           strokeColor: Colors.white,
         ),

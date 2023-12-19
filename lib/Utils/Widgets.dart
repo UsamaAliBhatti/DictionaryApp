@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dictionaryapp/Utils/Constants.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
 class Background extends StatelessWidget {
   Color bgcolor;
@@ -55,6 +54,7 @@ class TextWithStroke extends StatelessWidget {
         Text(
           text,
           style: textStyle,
+          textAlign: TextAlign.center,
         ),
       ],
     );
@@ -225,7 +225,7 @@ class categorywidget extends StatelessWidget {
             text: categoryname,
             textStyle: TextStyle(
                 fontFamily: "coiny",
-                fontSize: 30,
+                fontSize: 24,
                 color: Colors.orange.shade400,
                 fontWeight: FontWeight.bold),
             strokeWidth: 3,
@@ -335,7 +335,7 @@ class TextAndImageWidget extends StatelessWidget {
             strokeWidth: 2,
             textStyle: const TextStyle(
                 fontFamily: "coiny",
-                fontSize: 40,
+                fontSize: 30,
                 color: AppColors.white,
                 fontWeight: FontWeight.w600),
             text: text,

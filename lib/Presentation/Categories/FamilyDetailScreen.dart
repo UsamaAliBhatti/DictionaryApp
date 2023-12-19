@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dictionaryapp/Utils/Constants.dart';
 import 'package:dictionaryapp/Utils/Widgets.dart';
 import 'package:dictionaryapp/providers/family_signs_provider.dart';
@@ -49,20 +48,23 @@ class _FamilydetailScreenState extends State<FamilydetailScreen> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     IconButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
+                        padding: EdgeInsets.zero,
                         icon: const Icon(
                           Icons.arrow_back_ios,
                           size: 34,
-                          color: AppColors.white,
+                          color: AppColors.black,
                         )),
                     const TextWithStroke(
-                      text: 'Family Sign',
+                      text: 'Family Signs',
                       textStyle: TextStyle(
                           fontFamily: "coiny",
+                          height: 0.8,
                           color: AppColors.white,
                           fontSize: 35),
                       strokeWidth: 5.0,
@@ -75,26 +77,24 @@ class _FamilydetailScreenState extends State<FamilydetailScreen> {
                         child: CircularProgressIndicator(),
                       )
                     : Expanded(
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ListView.builder(
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: provider.getData!.length,
-                                  itemBuilder: (_, index) {
-                                    return TextAndImageWidget(
-                                      text: provider.getData![index]
-                                          ['sign_name'],
-                                      imagePath: provider.getData![index]
-                                          ['sign_link'],
-                                    );
-                                  }),
-                            ),
-                            Center(
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            padding: const EdgeInsets.all(15),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: provider.getData!.length,
+                            itemBuilder: (_, index) {
+                              return TextAndImageWidget(
+                                text: provider.getData![index]['sign_name'],
+                                imagePath: provider.getData![index]
+                                    ['sign_link'],
+                              );
+                            }),
+                      )
+              ],
+            )));
+  }
+}
+/*  Center(
                               child: Image.asset(
                                 AppImages.familySignsGlossaryImg,
                                 width: 400,
@@ -104,11 +104,4 @@ class _FamilydetailScreenState extends State<FamilydetailScreen> {
                             ),
                             const SizedBox(
                               width: 20,
-                            ),
-                          ],
-                        ),
-                      )
-              ],
-            )));
-  }
-}
+                            ), */

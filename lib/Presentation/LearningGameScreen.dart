@@ -166,41 +166,44 @@ class _LearningGameScreenState extends State<LearningGameScreen> {
                                       ? SizedBox(
                                           width: 55,
                                           height: 55,
-                                          child: AlphabetWidget(
-                                            containercolor: list.contains(
-                                                    int.parse(data.id))
-                                                ? Colors.green
-                                                : AppColors.textcolor,
-                                            alphabet: data['alphabet'],
-                                            ontap: () {
-                                              if (!list.contains(
-                                                      int.parse(data.id)) &&
-                                                  int.parse(data.id) ==
-                                                      streamData.data![
-                                                          'current_level']) {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (_) =>
-                                                            MatchingGameScreen(
-                                                                id: data.id,
-                                                                currentScore:
-                                                                    streamData
-                                                                            .data![
-                                                                        'current_score'])));
-                                              } /* else if (streamData.data![
-                                                          'current_level'] !=
-                                                      int.parse(data.id) &&
-                                                  !list.contains(
-                                                      int.parse(data.id))) {
-                                                Utils.showToast(
-                                                    'This level is currently locked. Please complete the unlocked one first.');
-                                              }  */
-                                              else {
-                                                Utils.showToast(
-                                                    'You have already completed the level. Try another one.');
-                                              }
-                                            },
+                                          child: Center(
+                                            child: AlphabetWidget(
+                                              fontSize: 26,
+                                              containercolor: list.contains(
+                                                      int.parse(data.id))
+                                                  ? Colors.green
+                                                  : AppColors.textcolor,
+                                              alphabet: data['alphabet'],
+                                              ontap: () {
+                                                if (!list.contains(
+                                                        int.parse(data.id)) &&
+                                                    int.parse(data.id) ==
+                                                        streamData.data![
+                                                            'current_level']) {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (_) =>
+                                                              MatchingGameScreen(
+                                                                  id: data.id,
+                                                                  currentScore:
+                                                                      streamData
+                                                                              .data![
+                                                                          'current_score'])));
+                                                } /* else if (streamData.data![
+                                                            'current_level'] !=
+                                                        int.parse(data.id) &&
+                                                    !list.contains(
+                                                        int.parse(data.id))) {
+                                                  Utils.showToast(
+                                                      'This level is currently locked. Please complete the unlocked one first.');
+                                                }  */
+                                                else {
+                                                  Utils.showToast(
+                                                      'You have already completed the level. Try another one.');
+                                                }
+                                              },
+                                            ),
                                           ),
                                         )
                                       : InkWell(
@@ -277,13 +280,13 @@ class _LearningGameScreenState extends State<LearningGameScreen> {
                                       color: AppColors.white,
                                     ),
                                   ),
-                                  child: const Padding(
-                                    padding: EdgeInsets.symmetric(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
                                         vertical: 6.0, horizontal: 8),
                                     child: Icon(
                                       Icons.exit_to_app,
                                       size: 32,
-                                      color: Colors.white,
+                                      color: Colors.black.withOpacity(0.7),
                                     ),
                                   ),
                                 ),

@@ -112,7 +112,7 @@ class _MainDashboardState extends State<MainDashboard> {
                     },
                   ),
                   const SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
                   InkWell(
                     onTap: () {
@@ -153,13 +153,13 @@ class _MainDashboardState extends State<MainDashboard> {
                           ),
                         ),
                         const SizedBox(
-                          height: 10,
+                          height: 7,
                         ),
                         TextWithStroke(
                           text: 'Matching Game',
                           textStyle: TextStyle(
                               fontFamily: "coiny",
-                              fontSize: 30,
+                              fontSize: 24,
                               color: Colors.orange.shade400,
                               fontWeight: FontWeight.bold),
                           strokeWidth: 3,
@@ -169,7 +169,7 @@ class _MainDashboardState extends State<MainDashboard> {
                     ),
                   ),
                   const SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
 
                   /*  categorywidget(
@@ -195,6 +195,9 @@ class _MainDashboardState extends State<MainDashboard> {
                               builder: (context) =>
                                   const FamilydetailScreen()));
                     },
+                  ),
+                  const SizedBox(
+                    width: 20,
                   ),
                   categorywidget(
                     categoryimg: AppImages.industrysigncategoryimg,
